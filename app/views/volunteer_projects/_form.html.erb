@@ -23,6 +23,27 @@
     <%= f.label :link %><br>
     <%= f.text_field :link %>
   </div>
+  <!-- 追加箇所 開始 -->
+ <div class="field">
+   <% if @volunteer_project.image? %>
+     <div class="thumbnail">
+       <%= image_tag @volunteer_project.image.url %>
+     </div>
+   <% end %><br>
+   <%= f.label :image %><br>
+   <%= f.file_field :image %>
+   <%= f.hidden_field :image_cache %>
+ </div>
+ <div class="field">
+   <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
+   <% if @volunteer_project.persisted? && @volunteer_project.image? %>
+     <label>
+       <%= f.check_box :remove_image %>
+       画像を削除
+     </label>
+   <% end %>
+ </div>
+ <!-- 追加箇所 終了 -->
   <div class="actions">
     <%= f.submit %>
   </div>

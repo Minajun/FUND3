@@ -69,6 +69,6 @@ class VolunteerProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def volunteer_project_params
-      params.require(:volunteer_project).permit(:name, :description, :link)
+      params.require(:volunteer_project).permit(:name, :description, :link, :image, :image_cache, :remove_image)
     end
 end

@@ -15,5 +15,17 @@
   <%= @volunteer_project.link %>
 </p>
 
+<!-- 追加箇所 開始 -->
+<p>
+  <strong>Image:</strong>
+  <% if @volunteer_project.image? %>
+    <div class="thumbnail">
+      <%= image_tag @volunteer_project.image.url %>
+    </div>
+  <% end %>
+</p>
+<!-- 追加箇所 終了 -->
+
+
 <%= link_to 'Edit', edit_volunteer_project_path(@volunteer_project) %> |
 <%= link_to 'Back', volunteer_projects_path %>
