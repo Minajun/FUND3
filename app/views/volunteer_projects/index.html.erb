@@ -2,9 +2,19 @@
 
 <h1>Listing Volunteer Projects</h1>
 
-<table>
+<style type="text/css">
+.table3 {
+  border-collapse: collapse;
+}
+.table3 th {
+  background-color: #cccccc;
+}
+</style>
+
+<table class="table3" border=1>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Name</th>
       <th>Description</th>
       <th>Link</th>
@@ -15,6 +25,7 @@
   <tbody>
     <% @volunteer_projects.each do |volunteer_project| %>
       <tr>
+        <td><%= volunteer_project.id %></td>
         <td><%= volunteer_project.name %></td>
         <td><%= volunteer_project.description %></td>
         <td><%= volunteer_project.link %></td>
