@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Volunteer Projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @volunteer_projects.each do |volunteer_project| %>
+      <tr>
+        <td><%= volunteer_project.name %></td>
+        <td><%= volunteer_project.description %></td>
+        <td><%= volunteer_project.link %></td>
+        <td><%= link_to 'Show', volunteer_project %></td>
+        <td><%= link_to 'Edit', edit_volunteer_project_path(volunteer_project) %></td>
+        <td><%= link_to 'Destroy', volunteer_project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Volunteer project', new_volunteer_project_path %>
